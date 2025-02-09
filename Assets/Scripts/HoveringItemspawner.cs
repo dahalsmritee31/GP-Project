@@ -1,16 +1,27 @@
 using UnityEngine;
 
-public class HoveringItemspawner : MonoBehaviour
+namespace AG1934
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public class HoveringItemSpawner : MonoBehaviour
     {
-        
-    }
+        public GameObject hoveringItemPrefab; // Assign the Sphere Prefab here
+        public Transform spawnPoint; // Optional: Where to spawn the sphere
+        public float spawnDelay = 1f; // Time between spawns
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+        private float timer = 0f;
+        void Start()
+        {
+            Instantiate(hoveringItemPrefab, spawnPoint.position, Quaternion.identity);
+        }
+
+        void Update()
+        {
+            timer += Time.deltaTime;
+            if (Input.GetKeyDown(KeyCode.Space) && timer >= spawnDelay)
+            {
+                Instantiate(hoveringItemPrefab, spawnPoint.position, Quaternion.identity);
+                timer = 0f; // Reset timer
+            }
+        }
+     }
 }

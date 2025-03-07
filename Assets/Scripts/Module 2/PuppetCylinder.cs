@@ -4,29 +4,40 @@ namespace AG1934
 {
     public class PuppetCylinder : MonoBehaviour
     {
-        public GameObject[] teleportPoints; // Array to hold teleport points
-        public float rotationSpeed = 45f;   // Speed of rotation (can be adjusted in the Inspector)
+        // Private fields for internal state
+        [SerializeField] private GameObject[] teleportPoints; // Points where the object can teleport
+        [SerializeField] private float rotationSpeed = 45f;   // Speed of rotation
 
-        // Update is called once per frame
+        // Public property to control access to teleportPoints
+        public GameObject[] TeleportPoints
+        {
+            get { return teleportPoints; }
+            set { teleportPoints = value; }
+        }
+
+        // Public property to control access to rotationSpeed
+        public float RotationSpeed
+        {
+            get { return rotationSpeed; }
+            set { rotationSpeed = Mathf.Max(0, value); } // Preventing negative speed
+        }
+
         void Update()
         {
-            RotateUpAndDown();  // Rotate the puppet up and down every frame
+            RotateUpAndDown();
         }
 
-        // Function to rotate the PuppetCylinder up and down
         private void RotateUpAndDown()
         {
-            // Rotate the PuppetCylinder around the X-axis (up and down)
-            transform.Rotate(Vector3.right * rotationSpeed * Time.deltaTime);
+            transform.Rotate(Vector3.right * rotationSpeed * Time.deltaTime);  // Rotates up and down
         }
 
-        // Function to move the PuppetCylinder to a random teleport point
         public void MoveToRandomPoint()
         {
-            if (teleportPoints.Length > 0) // Check if there are teleport points assigned
+            if (teleportPoints.Length > 0)
             {
-                int randomIndex = Random.Range(0, teleportPoints.Length);  // Pick a random index from teleportPoints
-                transform.position = teleportPoints[randomIndex].transform.position;  // Teleport the PuppetCylinder
+                int randomIndex = Random.Range(0, teleportPoints.Length);
+                transform.position = teleportPoints[randomIndex].transform.position;
             }
         }
     }

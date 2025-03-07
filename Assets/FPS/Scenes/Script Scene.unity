@@ -675,6 +675,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8369105801948835014, guid: 4533547fcca037f4db035bfdc1a5378d,
         type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8369105801948835014, guid: 4533547fcca037f4db035bfdc1a5378d,
+        type: 3}
       propertyPath: m_TagString
       value: Enemy
       objectReference: {fileID: 0}
@@ -829,7 +834,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91d6771670364d945a0795dfb4be7436, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myObject: {fileID: 0}
 --- !u!4 &1588137202
 Transform:
   m_ObjectHideFlags: 0
@@ -1057,7 +1061,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91d6771670364d945a0795dfb4be7436, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myObject: {fileID: 1707464155}
 --- !u!1 &1757624912
 GameObject:
   m_ObjectHideFlags: 0
@@ -1446,7 +1449,7 @@ SceneRoots:
   - {fileID: 1699434164}
   - {fileID: 1013341262}
   - {fileID: 1629823064}
+  - {fileID: 1419700519}
   - {fileID: 8395827709685694090}
   - {fileID: 171346816109465556}
-  - {fileID: 1419700519}
   - {fileID: 1588137202}

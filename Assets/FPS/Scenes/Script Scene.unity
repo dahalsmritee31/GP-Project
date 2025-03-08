@@ -553,7 +553,7 @@ PrefabInstance:
     - target: {fileID: 1848023449311373537, guid: bb4bce613c34911478cd7ea3af68d1bc,
         type: 3}
       propertyPath: m_TagString
-      value: Enemy
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 2576162980990075892, guid: bb4bce613c34911478cd7ea3af68d1bc,
         type: 3}
@@ -681,7 +681,7 @@ PrefabInstance:
     - target: {fileID: 8369105801948835014, guid: 4533547fcca037f4db035bfdc1a5378d,
         type: 3}
       propertyPath: m_TagString
-      value: Enemy
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace AG1934
 {
-    public class Bomb : Weapon
+    public class Bombb : Weapon
     {
         // Set throw force to apply when the bomb is thrown
         public float throwForce = 10f;

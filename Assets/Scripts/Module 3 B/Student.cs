@@ -2,23 +2,21 @@ using UnityEngine;
 
 namespace AG1934
 {
-    public class Student : MonoBehaviour
+    public class Student : Character
     {
-        public string studentName;
-
-        public void Communicate()
+        public override void Move()
         {
-            Debug.Log($"{studentName}: Sorry for being late, I missed my bus!");
+            Debug.Log(characterName + " is walking to class.");
         }
 
-        public void Move()
+        public override void Interact()
         {
-            Debug.Log($"{studentName} is moving...");
+            Debug.Log(characterName + " is chatting with friends.");
         }
 
-        public void Interact()
+        public override void Communicate()
         {
-            Debug.Log($"{studentName} is interacting.");
+            Debug.Log(characterName + " says: 'Did you finish the homework?'");
         }
     }
 }

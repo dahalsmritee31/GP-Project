@@ -2,11 +2,21 @@ using UnityEngine;
 
 namespace AG1934
 {
-    public class Teacher : Student
+    public class Teacher : Character
     {
-        public void Teach()
+        public override void Move()
         {
-            Debug.Log($"{studentName} is teaching a lesson.");
+            Debug.Log(characterName + " is walking to the classroom.");
+        }
+
+        public override void Interact()
+        {
+            Debug.Log(characterName + " is reviewing lesson notes.");
+        }
+
+        public override void Communicate()
+        {
+            Debug.Log(characterName + " says: 'Good morning, class! Let's begin.'");
         }
     }
 }

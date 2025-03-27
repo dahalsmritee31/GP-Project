@@ -119,6 +119,52 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &61520763
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 61520764}
+  - component: {fileID: 61520765}
+  m_Layer: 0
+  m_Name: TestManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &61520764
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 61520763}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 449439877}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &61520765
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 61520763}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80b3837be5161cd4dba795add200ecb2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  teacher: {fileID: 356501483}
+  student: {fileID: 364876389}
 --- !u!1001 &251572044
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -308,7 +354,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65cb0dbf473ca39469ed62bb6cab160f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  studentName: 
+  characterName: Risto
 --- !u!1 &364876384
 GameObject:
   m_ObjectHideFlags: 0
@@ -432,7 +478,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2844c74558853c498527f71d23bc026, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  studentName: 
+  characterName: Smritee
 --- !u!1 &424713344 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1957100486155622811, guid: 4f82d7a463943354285adb85f8f5ade8,
@@ -487,6 +533,7 @@ Transform:
   - {fileID: 1080542620}
   - {fileID: 364876385}
   - {fileID: 356501479}
+  - {fileID: 61520764}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &593123819 stripped
@@ -619,7 +666,7 @@ GameObject:
   - component: {fileID: 722217613}
   - component: {fileID: 722217614}
   m_Layer: 0
-  m_Name: ' Bombb'
+  m_Name: Bombb
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

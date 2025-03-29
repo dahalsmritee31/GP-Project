@@ -2,11 +2,10 @@ using UnityEngine;
 
 namespace AG1934
 {
-    public class WorldItem : Item, ICollectible, IInteractable
+    public class WorldItem : Item
     {
         [SerializeField] private float interactionRadius = 2f;
-        [SerializeField] private LayerMask whoCanUse;  // Defines who can use the item
-
+        [SerializeField] private LayerMask whoCanUse;  // Defines who can interact with the item
         private SphereCollider sphereCollider;
 
         private void Start()
@@ -19,28 +18,20 @@ namespace AG1934
 
         public override void Use()
         {
-            // Define how the item is used (can be overridden by subclasses)
-            Debug.Log($"Using {itemName}...");
-        }
+            // Call base class implementation
+            base.Use();
 
-        // Make Collect() method virtual so it can be overridden in subclasses
-        public virtual void Collect()
-        {
-            Debug.Log($"{itemName} Collected!");
-            Destroy(gameObject); // Removes the item from the world
-        }
+            // Additional behavior for WorldItem
+            Debug.Log($"{itemName} is a world item and is now being consumed!");
 
-        // Implement the Interact() method from IInteractable
-        public void Interact()
-        {
-            Debug.Log($"Interacting with {itemName}...");
-            // Add interaction behavior here
+            // Example: Play a sound effect or remove the item from the world
+            Destroy(gameObject);
         }
 
         private void OnTriggerEnter(Collider other)
         {
-            // Check if the item is within the interaction range and if the layer can use it
-            if (((1 << other.gameObject.layer) & whoCanUse) != 0)
+            // Check if the other object's layer is within the allowed interaction layers
+            if (whoCanUse == (whoCanUse | (1 << other.gameObject.layer)))
             {
                 Debug.Log($"{other.name} is within range to interact with {itemName}");
             }

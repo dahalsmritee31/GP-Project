@@ -2,46 +2,36 @@ using UnityEngine;
 
 namespace AG1934
 {
-    public class CollectibleItem : Item, ICollectible, IInteractable
+    public class CollectibleItem : MonoBehaviour, ICollectible
     {
-        public string itemName = "Magic Stone";  // Name of the item
-        public GameObject itemPrefab;  // Prefab reference
-        public float interactionRadius = 5f;  // Interaction radius for the item
-        private KeyCode activationKey = KeyCode.E; // Key to activate item
+        [SerializeField] private string itemName = "Collectible Coin"; // Item name
+        [SerializeField] private int itemValue = 10;  // Value or points associated with the item
 
-        // Implement the Collect() method from ICollectible
+        private static int totalScore = 0;  // Static variable to track total score across all collectibles
+
+        private void Start()
+        {
+            Debug.Log($"{itemName} is available for collection.");
+        }
+
+        // This is the same interface method but with a different implementation.
         public void Collect()
         {
-            Debug.Log($"{itemName} collected!");
-            // You can add more logic here, such as adding the item to the player's inventory.
-            Destroy(gameObject);  // Destroy the object after collection
+            // Instead of destroying, we add the value to the player's score.
+            totalScore += itemValue;
+            Debug.Log($"Collected {itemName}, Total Score: {totalScore}");
+
+            // Optionally disable the item instead of destroying it.
+            gameObject.SetActive(false);
         }
 
-        // Implement the Interact() method from IInteractable
-        public void Interact()
+        private void OnTriggerEnter(Collider other)
         {
-            Debug.Log($"{itemName} interacted with!");
-            // You can add interaction logic here, like using the item or displaying a UI.
-        }
-
-        // Override the Use() method from Item class (base class)
-        public override void Use()
-        {
-            Debug.Log($"{itemName} is being used!");
-            base.Use();
-            // Additional logic can go here (e.g., applying effects, etc.)
-        }
-
-        // Optional: Add logic for checking player proximity and activating interaction.
-        private void Update()
-        {
-            // Check if the player is within interaction radius and presses the activation key
-            if (Vector3.Distance(transform.position, Camera.main.transform.position) < interactionRadius)
+            // Check if the player collides with the collectible (assuming the player is tagged as "Player")
+            if (other.CompareTag("Player"))
             {
-                if (Input.GetKeyDown(activationKey))
-                {
-                    Interact();  // Call the Interact method when the player presses the key
-                }
+                Debug.Log($"{other.name} is close to collect {itemName}");
+                Collect();
             }
         }
     }

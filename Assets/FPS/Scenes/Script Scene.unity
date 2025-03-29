@@ -2225,7 +2225,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.5
+  m_Radius: 2.98
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1939497440
 MeshRenderer:
@@ -2292,11 +2292,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07a553e38a198eb43b78b7536c2c4fde, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: 
-  itemPrefab: {fileID: 0}
-  itemName: 
-  itemPrefab: {fileID: 0}
-  interactionRadius: 5
+  itemName: Book
+  itemValue: 10
 --- !u!1 &2048917117
 GameObject:
   m_ObjectHideFlags: 0
@@ -2482,7 +2479,8 @@ GameObject:
   - component: {fileID: 2099832839}
   - component: {fileID: 2099832843}
   - component: {fileID: 2099832841}
-  - component: {fileID: 2099832842}
+  - component: {fileID: 2099832845}
+  - component: {fileID: 2099832844}
   m_Layer: 0
   m_Name: ItemManager
   m_TagString: MainCamera
@@ -2517,23 +2515,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 974e8f5f0e9dbf441afa09f3e8cb8761, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &2099832842
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2099832838}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 07a553e38a198eb43b78b7536c2c4fde, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemName: 
-  itemPrefab: {fileID: 0}
-  itemName: Magic Stone
-  itemPrefab: {fileID: 0}
-  interactionRadius: 5
 --- !u!114 &2099832843
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2547,11 +2528,41 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemName: 
-  itemPrefab: {fileID: 0}
-  interactionRadius: 2
+  itemPrefab: {fileID: 1250165664}
+  interactionRadius: 5.43
   whoCanUse:
     serializedVersion: 2
     m_Bits: 0
+--- !u!114 &2099832844
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2099832838}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ff883e0c8286c74d8bb7cd7256294f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactionRadius: 3.42
+  interactableLayer:
+    serializedVersion: 2
+    m_Bits: 0
+--- !u!114 &2099832845
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2099832838}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07a553e38a198eb43b78b7536c2c4fde, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemName: Default Collectible
+  itemValue: 10
 --- !u!4 &2144776627 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8746678193447392789, guid: 761cdc9e4e883334cbdcea062d0befa7,

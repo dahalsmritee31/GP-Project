@@ -1,9 +1,18 @@
 using UnityEngine;
-using AG1934; // if you have a namespace like this
+using AG1934;
 
 public class Player1 : MonoBehaviour
 {
-    public Weapon1 equippedWeapon; // This must be PUBLIC
+    public Weapon1 equippedWeapon;
+
+    void Update()
+    {
+        // Press Spacebar to Attack
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            AttackWithWeapon();
+        }
+    }
 
     public void AttackWithWeapon()
     {

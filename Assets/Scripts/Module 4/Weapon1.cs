@@ -1,11 +1,12 @@
 using UnityEngine;
 
-using AG1934;
-
-public class Weapon1 : MonoBehaviour
+namespace AG1934
 {
-    public void Attack()
+    public class Weapon1 : MonoBehaviour
     {
-        Debug.Log("Weapon Attack!");
+        public void Attack()
+        {
+            Debug.Log("Weapon1 Attack! Pew pew!");
+        }
     }
 }
